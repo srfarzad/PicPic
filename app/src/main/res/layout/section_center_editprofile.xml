@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white">
+
+            <com.jackandphantom.circularimageview.CircleImage
+                android:layout_width="110dp"
+                android:layout_height="110dp"
+                android:id="@+id/profile_photo"
+                android:src="@drawable/profile"
+                android:layout_marginTop="@dimen/margin_16"
+                app:border_color="@color/black"
+                android:layout_centerHorizontal="true"
+                app:border_width="1dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Change photo"
+                android:id="@+id/changeProfilePhoto"
+                android:layout_below="@id/profile_photo"
+                android:layout_centerHorizontal="true"
+                android:textColor="@color/blue_400"
+                android:textStyle="bold"
+                android:textSize="@dimen/size_txt_20"/>
+            
+
+            <!--display name section-->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:id="@+id/relLayout"
+                android:layout_below="@id/changeProfilePhoto"
+                android:padding="@dimen/padding_20">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/relLayout1"
+                android:layout_marginTop="@dimen/margin_32"
+                >
+
+                <android.support.v7.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:textSize="14sp"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:text="@string/Name"
+                    android:id="@+id/nameText"
+                    />
+
+                <android.support.v7.widget.AppCompatEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="14sp"
+                    android:hint="@string/Name"
+                    android:layout_marginTop="3dp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_below="@id/nameText"/>
+            </RelativeLayout>
+
+
+            <!--display username section-->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/relLayout2"
+                android:layout_marginTop="@dimen/margin_5"
+                android:layout_below="@id/relLayout1">
+
+                <android.support.v7.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:textSize="14sp"
+                    android:text=" Username"
+                    android:id="@+id/UsernameText"
+                    />
+
+                <android.support.v7.widget.AppCompatEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="14sp"
+                    android:layout_marginTop="3dp"
+                    android:hint="Username"
+                    android:layout_alignParentLeft="true"
+                    android:layout_below="@id/UsernameText"/>
+            </RelativeLayout>
+
+            <!--display website section-->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_5"
+                android:id="@+id/relLayout3"
+                android:layout_below="@id/relLayout2">
+
+                <android.support.v7.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=" Website"
+                    android:textSize="14sp"
+                    android:layout_alignParentLeft="true"
+                    android:id="@+id/webSiteText"
+                    />
+
+                <android.support.v7.widget.AppCompatEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="14sp"
+                    android:hint="Website"
+                    android:layout_marginTop="3dp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_below="@id/webSiteText"/>
+            </RelativeLayout>
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/relLayout4"
+                    android:layout_marginTop="@dimen/margin_5"
+                    android:layout_below="@id/relLayout3">
+
+                    <android.support.v7.widget.AppCompatTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=" Bio"
+                        android:textSize="14sp"
+                        android:id="@+id/bioText"
+                        />
+
+                    <android.support.v7.widget.AppCompatEditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="14sp"
+                        android:layout_marginTop="3dp"
+                        android:hint="Bio"
+                        android:layout_alignParentLeft="true"
+                        android:layout_below="@id/bioText"/>
+                </RelativeLayout>
+
+            </RelativeLayout>
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_marginTop="@dimen/margin_8"
+                android:layout_height="wrap_content"
+                android:padding="20dp"
+                android:id="@+id/relLayout5"
+                android:background="@drawable/grey_border_top"
+                android:layout_below="@id/relLayout">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Try Instagram Business Tools"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"/>
+
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/relLayout5"
+                android:paddingTop="30dp"
+                android:paddingRight="20dp"
+                android:paddingLeft="20dp"
+                android:id="@+id/relLayout6"
+                android:background="@drawable/grey_border_top"
+                android:paddingBottom="@dimen/margin_5">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Private information"
+                    android:textSize="16sp"
+                    android:id="@+id/textPrivate"
+                    android:textColor="@color/black"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/textPrivate"
+                    android:layout_marginTop="@dimen/margin_16"
+                    android:textSize="14sp"
+                    android:id="@+id/textEmail"
+                    android:text=" Email address"/>
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/textEmail"
+                    android:textSize="14sp"
+                    android:hint="Email address"
+                    android:layout_marginTop="2dp"/>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="30dp"
+                android:id="@+id/relLayout7"
+                android:layout_below="@id/relLayout6"
+                android:paddingRight="20dp"
+                android:background="@drawable/grey_border_top"
+                android:paddingBottom="@dimen/margin_5"
+                android:paddingLeft="20dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=" Phone number"
+                    android:textSize="14sp"
+                    android:id="@+id/textPhone" />
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/textPhone"
+                    android:textSize="14sp"
+                    android:hint="Phone number"
+                    android:layout_marginTop="2dp"/>
+
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="30dp"
+                android:paddingRight="20dp"
+                android:background="@drawable/grey_border_top"
+                android:layout_below="@id/relLayout7"
+                android:paddingLeft="20dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=" Gender"
+                    android:textSize="14sp"
+                    android:id="@+id/textGender"
+                    />
+
+
+            </RelativeLayout>
+
+
+        </RelativeLayout>
+    </ScrollView>
+</merge>

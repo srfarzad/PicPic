@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item android:id="@+id/bootomBarItem_home"
+        android:icon="@drawable/ic_selected_home"
+        android:title=""
+      />
+
+    <item android:id="@+id/bootomBarItem_search"
+        android:icon="@drawable/ic_serach"
+        android:title=""
+      />
+
+
+    <item android:id="@+id/bootomBarItem_share"
+        android:icon="@drawable/ic_selected_share"
+        android:title=""
+       />
+
+
+    <item android:id="@+id/bootomBarItem_like"
+        android:icon="@drawable/ic_selected_heart"
+        android:title=""
+      />
+
+
+    <item android:id="@+id/bootomBarItem_profile"
+        android:icon="@drawable/ic_selected_profile"
+        android:title=""
+        app:showAsAction="ifRoom"/>
+
+</menu>
