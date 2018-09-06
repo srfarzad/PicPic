@@ -13,6 +13,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -20,15 +21,21 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.picpic.BaseFragment;
 import com.picpic.Utils.BottomNavigationViewHelper;
 import com.picpic.Utils.PostAdapter;
 import com.picpic.R;
+import com.picpic.models.IMessageListener;
+import com.picpic.models.Posts;
+import com.picpic.webservice.WebserviceCaller;
+
+import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
 @SuppressLint("ValidFragment")
-public class HomeFragment extends Fragment {
+public class HomeFragment extends BaseFragment {
 
     @BindView(R.id.bottomNavViewBar)
     BottomNavigationView mBottomNavigationView;
@@ -39,22 +46,19 @@ public class HomeFragment extends Fragment {
     @BindView(R.id.home_toolbar)
     Toolbar mToolbar;
 
-    @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN_MR2)
-    @Nullable
+    WebserviceCaller webserviceCaller;
+
+
     @Override
-    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view=inflater.inflate(R.layout.fragment_home,container,false);
-        ButterKnife.bind(this,view);
-
-        /*
-        * setup RecyclerView
-        * */
-        setupRecyclerView(mRecyclerView);
+    protected int getFragmentLayout() {
+        return R.layout.fragment_home;
+    }
 
 
-        /*
-        * setup Toolbar
-        * */
+    @Override
+    public void onViewCreated(View view, Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+
 
         AppCompatActivity activity =(AppCompatActivity)getActivity();
         activity.setSupportActionBar(mToolbar);
@@ -64,25 +68,47 @@ public class HomeFragment extends Fragment {
 
         setHasOptionsMenu(true);
 
-
-
-        /*
-         * setup BottomNavigationView
-         * */
         setupBottomNavigation(mBottomNavigationView);
+        webserviceCaller = new WebserviceCaller();
 
 
+        getAllPosts();
 
-        return view;
     }
 
-    private void setupRecyclerView(RecyclerView mRecyclerView) {
+
+    public void getAllPosts(){
+
+        webserviceCaller.getAllPosts(new IMessageListener() {
+            @Override
+            public void onResponse(List posts) {
+                Log.e("","");
+
+                setupRecyclerView(mRecyclerView,posts);
+
+            }
+
+            @Override
+            public void onResponse(Object posts) {
+
+            }
+
+            @Override
+            public void onError(String error) {
+                Log.e("","");
+            }
+        });
+
+    }
+
+
+    private void setupRecyclerView(RecyclerView mRecyclerView, List<Posts> posts) {
 
         mRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity().getBaseContext()));
         mRecyclerView.setHasFixedSize(false);
         mRecyclerView.setNestedScrollingEnabled(false);
 
-        PostAdapter adapter=new PostAdapter();
+        PostAdapter adapter=new PostAdapter(getActivity(),posts);
         mRecyclerView.setAdapter(adapter);
 
     }

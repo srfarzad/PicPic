@@ -12,4 +12,15 @@
     <string name="pic_web">www.picpic.com</string>
     <string name="likes">likes</string>
     <string name="post_desc">the first post</string>
+
+    <string name="male">مرد</string>
+    <string name="female">زن</string>
+
+    <string-array name="gender">
+
+        <item>@string/male</item>
+        <item>@string/female</item>
+
+    </string-array>
+
 </resources>

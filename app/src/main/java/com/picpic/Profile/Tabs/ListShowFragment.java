@@ -24,9 +24,9 @@ public class ListShowFragment extends Fragment {
         View view=inflater.inflate(R.layout.fragment_listshow,container,false);
         ButterKnife.bind(this,view);
 
-        mRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity().getBaseContext()));
-        PostAdapter adapter=new PostAdapter();
-        mRecyclerView.setAdapter(adapter);
+       // mRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity().getBaseContext()));
+       // PostAdapter adapter=new PostAdapter();
+       // mRecyclerView.setAdapter(adapter);
 
         return view;
     }
