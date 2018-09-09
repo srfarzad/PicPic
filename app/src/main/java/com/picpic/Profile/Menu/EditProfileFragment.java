@@ -1,4 +1,4 @@
-package com.picpic.Profile.Fragments;
+package com.picpic.Profile.Menu;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -16,8 +16,6 @@ import com.picpic.BaseFragment;
 import com.picpic.R;
 import com.picpic.models.User;
 import com.picpic.realm.RealmManagement;
-
-import java.util.List;
 
 import butterknife.BindView;
 import io.realm.Realm;

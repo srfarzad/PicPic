@@ -6,29 +6,33 @@ import android.support.annotation.Nullable;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 
+import com.picpic.BaseActivity;
 import com.picpic.R;
 import com.picpic.Utils.SectionPagerAdapter;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-public class HomeActivity extends AppCompatActivity {
+public class HomeActivity extends BaseActivity {
 
 
 
     @BindView(R.id.container) ViewPager mViewPager;
     private Context context= HomeActivity.this;
 
+
+    @Override
+    public int setContentView() {
+        return R.layout.activity_home;
+    }
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_home);
-        ButterKnife.bind(this);
 
         setUpViewPager(mViewPager);
 
     }
-
 
 
 

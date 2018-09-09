@@ -9,6 +9,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import com.picpic.BaseActivity;
 import com.picpic.Likes.LikesActivity;
 import com.picpic.R;
 import com.picpic.Utils.BottomNavigationViewHelper;
@@ -16,7 +17,7 @@ import com.picpic.Utils.BottomNavigationViewHelper;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-public class SearchActivity extends AppCompatActivity {
+public class SearchActivity extends BaseActivity {
 
     @BindView(R.id.bottomNavViewBar)
     BottomNavigationView mBottomNavigationView;
@@ -24,14 +25,18 @@ public class SearchActivity extends AppCompatActivity {
     private Context mContext=SearchActivity.this;
 
     @Override
+    public int setContentView() {
+        return R.layout.activity_search;
+    }
+    @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_search);
-        ButterKnife.bind(this);
 
         setupBottomNavigation(mBottomNavigationView);
 
     }
+
+
 
     /*
      * setup BottomNavigationView & items Click

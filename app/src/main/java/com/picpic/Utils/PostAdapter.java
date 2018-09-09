@@ -2,6 +2,7 @@ package com.picpic.Utils;
 
 import android.content.Context;
 import android.support.annotation.NonNull;
+import android.support.v7.widget.AppCompatImageView;
 import android.support.v7.widget.AppCompatTextView;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
@@ -109,20 +110,29 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.SimpleViewHold
 
     public class SimpleViewHolder extends RecyclerView.ViewHolder {
 
-        private CircleImage img_Profile;
-        private ImageView img_Post;
-        private TextView txt_like;
-
-        @BindView(R.id.txt_description)
+        @BindView(R.id.tvDescription)
         AppCompatTextView txt_description;
+
+        @BindView(R.id.txt_num_likes)
+        AppCompatTextView txt_like;
+
+        @BindView(R.id.img_post)
+        AppCompatImageView img_Post;
+
+        @BindView(R.id.circle_img_profile)
+        CircleImage img_Profile;
+
+        @BindView(R.id.tv_user)
+        AppCompatTextView usetName;
+
+        @BindView(R.id.tvUser)
+        AppCompatTextView usetName2;
 
         public SimpleViewHolder(@NonNull View itemView) {
             super(itemView);
+
             ButterKnife.bind(this,itemView);
 
-            img_Profile = itemView.findViewById(R.id.circle_img_profile);
-            img_Post = itemView.findViewById(R.id.img_post);
-            txt_like = itemView.findViewById(R.id.txt_num_likes);
         }
     }
 

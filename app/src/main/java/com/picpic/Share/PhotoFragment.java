@@ -8,14 +8,19 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.picpic.BaseFragment;
 import com.picpic.R;
 
-public class PhotoFragment extends Fragment {
+public class PhotoFragment extends BaseFragment {
 
-    @Nullable
+
     @Override
-    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view=inflater.inflate(R.layout.fragment_photo,container,false);
-        return view;
+    protected int getFragmentLayout() {
+        return R.layout.fragment_photo;
+    }
+
+    @Override
+    public void onViewCreated(View view, Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
     }
 }

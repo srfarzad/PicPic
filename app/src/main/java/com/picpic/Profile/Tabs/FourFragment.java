@@ -6,20 +6,18 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.picpic.BaseFragment;
 import com.picpic.R;
 
-public class FourFragment extends Fragment {
+public class FourFragment extends BaseFragment {
 
     @Override
-    public void onCreate( Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
+    protected int getFragmentLayout() {
+        return R.layout.activity_main;
     }
 
-
     @Override
-    public View onCreateView( LayoutInflater inflater,  ViewGroup container,  Bundle savedInstanceState) {
-
-        View view=inflater.inflate(R.layout.activity_main,container,false);
-        return view;
+    public void onViewCreated(View view, Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
     }
 }

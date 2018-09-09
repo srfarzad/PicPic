@@ -10,6 +10,8 @@ import android.support.design.widget.BottomNavigationView;
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.AppCompatImageView;
+import android.support.v7.widget.AppCompatTextView;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -18,6 +20,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.jackandphantom.circularimageview.CircleImage;
+import com.picpic.BaseActivity;
 import com.picpic.Profile.Tabs.FourFragment;
 import com.picpic.Profile.Tabs.GridShowFragment;
 import com.picpic.Profile.Tabs.ThreeFragment;
@@ -29,8 +32,9 @@ import com.picpic.Utils.SectionPagerAdapter;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import butterknife.OnClick;
 
-public class ProfileActivity extends AppCompatActivity {
+public class ProfileActivity extends BaseActivity {
     @BindView(R.id.sliding_tabs_profile)
     TabLayout mTabLayout;
 
@@ -44,41 +48,45 @@ public class ProfileActivity extends AppCompatActivity {
     Toolbar mToolbar;
 
     @BindView(R.id.ic_profile_menu)
-    ImageView menu;
+    AppCompatImageView menu;
 
     @BindView(R.id.profile_image)
     CircleImage circleImage;
 
     @BindView(R.id.textEditProfile)
-    TextView editProfile;
+    AppCompatTextView editProfile;
 
     private Context mContext=ProfileActivity.this;
 
     @Override
+    public int setContentView() {
+        return R.layout.activity_profile;
+    }
+
+    @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_profile);
-        ButterKnife.bind(this);
 
         setSupportActionBar(mToolbar);
 
-        menu.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(mContext,AccountSettingsActivity.class));
-            }
-        });
 
-        editProfile.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-              Bundle bundle=new Bundle();
-              bundle.putInt("fragNum",0);
-              Intent intent=new Intent(mContext,AccountSettingsActivity.class);
-              intent.putExtras(bundle);
-              startActivity(intent);
-            }
-        });
+//        menu.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                startActivity(new Intent(mContext,AccountSettingsActivity.class));
+//            }
+//        });
+
+//        editProfile.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//              Bundle bundle=new Bundle();
+//              bundle.putInt("fragNum",0);
+//              Intent intent=new Intent(mContext,AccountSettingsActivity.class);
+//              intent.putExtras(bundle);
+//              startActivity(intent);
+//            }
+//        });
 
         circleImage.setImageResource(R.drawable.profile);
 
@@ -94,6 +102,22 @@ public class ProfileActivity extends AppCompatActivity {
         setupBottomNavigation(mBottomNavigationView);
 
     }
+
+    @OnClick(R.id.ic_profile_menu)
+    public void menuClick(){
+        startActivity(new Intent(mContext,AccountSettingsActivity.class));
+
+    }
+
+    @OnClick(R.id.textEditProfile)
+    public void editProfile(){
+        Bundle bundle=new Bundle();
+        bundle.putInt("fragNum",0);
+        Intent intent=new Intent(mContext,AccountSettingsActivity.class);
+        intent.putExtras(bundle);
+        startActivity(intent);
+    }
+
 
 
     /*

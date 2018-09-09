@@ -6,19 +6,29 @@
 
     <dimen name="margin_5">5dp</dimen>
     <dimen name="margin_10">10dp</dimen>
+    <dimen name="margin_2">2dp</dimen>
+    <dimen name="margin_3">3dp</dimen>
+    <dimen name="margin_4">4dp</dimen>
+    <dimen name="margin_7">7dp</dimen>
     <dimen name="margin_8">8dp</dimen>
+    <dimen name="margin_14">14dp</dimen>
     <dimen name="margin_16">16dp</dimen>
     <dimen name="margin_18">18dp</dimen>
     <dimen name="margin_32">32dp</dimen>
     <dimen name="margin_50">50dp</dimen>
 
     <dimen name="padding_20">20dp</dimen>
+    <dimen name="padding_30">30dp</dimen>
 
     <dimen name="size_txt_32">32sp</dimen>
     <dimen name="size_txt_20">20sp</dimen>
     <dimen name="size_txt_16">16sp</dimen>
+    <dimen name="size_txt_18">18sp</dimen>
     <dimen name="size_txt_12">12sp</dimen>
     <dimen name="toolbar_size_50">50dp</dimen>
+    <dimen name="size_txt_10">10sp</dimen>
+    <dimen name="size_txt_14">14sp</dimen>
+
 
 
 </resources>

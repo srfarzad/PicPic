@@ -5,7 +5,6 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v4.view.ViewPager;
-import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -14,8 +13,9 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.RelativeLayout;
 
-import com.picpic.Profile.Fragments.EditProfileFragment;
-import com.picpic.Profile.Fragments.SignOutFragment;
+import com.picpic.BaseActivity;
+import com.picpic.Profile.Menu.EditProfileFragment;
+import com.picpic.Profile.Menu.SignOutFragment;
 import com.picpic.R;
 import com.picpic.Utils.BottomNavigationViewHelper;
 import com.picpic.Utils.SectionStatePagerAdapter;
@@ -23,9 +23,8 @@ import com.picpic.Utils.SectionStatePagerAdapter;
 import java.util.ArrayList;
 
 import butterknife.BindView;
-import butterknife.ButterKnife;
 
-public class AccountSettingsActivity extends AppCompatActivity {
+public class AccountSettingsActivity extends BaseActivity {
 
     private SectionStatePagerAdapter adapter;
     private Context mContext=AccountSettingsActivity.this;
@@ -39,12 +38,15 @@ public class AccountSettingsActivity extends AppCompatActivity {
     @BindView(R.id.relLayout1)
     RelativeLayout mRelativeLayout;
 
+    @Override
+    public int setContentView() {
+        return R.layout.activity_accountsetting;
+    }
+
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_accountsetting);
-        ButterKnife.bind(this);
 
 
         /*
@@ -54,10 +56,9 @@ public class AccountSettingsActivity extends AppCompatActivity {
             Bundle bundle=getIntent().getExtras();
             int fragNum=bundle.getInt("fragNum");
 
-            if(fragNum==0){
                 setupFragments();
-            setViewPager(0);
-        }
+            setViewPager(fragNum);
+
 
         }catch (Exception e){
             e.printStackTrace();
@@ -70,6 +71,8 @@ public class AccountSettingsActivity extends AppCompatActivity {
 
         setupBottomNavigation(mBottomNavigationView);
     }
+
+
 
 
     private void setupFragments(){

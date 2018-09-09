@@ -1,25 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
-<merge  xmlns:android="http://schemas.android.com/apk/res/android">
+<merge xmlns:android="http://schemas.android.com/apk/res/android">
 
     <RelativeLayout
-        android:layout_height="wrap_content"
         android:layout_width="match_parent"
-        android:padding="@dimen/padding_20"
-        android:background="@color/white">
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:padding="@dimen/padding_20">
+
         <android.support.v7.widget.AppCompatTextView
+            android:id="@+id/textSettings"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/textSettings"
-            android:text="Account Settings"
-            android:textSize="@dimen/size_txt_32"
-            android:textColor="@color/black"
             android:background="@drawable/grey_border_bottom"
+            android:text="Account Settings"
+            android:textColor="@color/black"
+            android:textSize="@dimen/size_txt_32"
 
             />
+
         <ListView
+            android:id="@+id/listview_accountSetting"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_below="@id/textSettings"
-            android:id="@+id/listview_accountSetting"/>
+            android:layout_below="@id/textSettings" />
     </RelativeLayout>
 </merge>

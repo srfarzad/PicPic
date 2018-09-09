@@ -15,15 +15,14 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="3"
+            android:layout_weight="3.5"
             android:gravity="center">
 
             <android.support.v7.widget.AppCompatImageView
-                android:id="@+id/img_logo"
-                android:layout_width="120dp"
-                android:layout_height="100dp"
+                android:layout_width="200dp"
+                android:layout_height="200dp"
                 android:layout_gravity="center|bottom"
-                app:srcCompat="@drawable/ic_logo" />
+                app:srcCompat="@drawable/ic_circle_profile" />
         </LinearLayout>
 
         <LinearLayout
@@ -31,17 +30,18 @@
             android:layout_height="0dp"
             android:layout_marginLeft="@dimen/margin_16"
             android:layout_marginRight="@dimen/margin_16"
-            android:layout_weight="6"
+            android:layout_weight="5.5"
             android:orientation="vertical">
 
+
             <android.support.v7.widget.AppCompatEditText
-                android:id="@+id/edt_login_username"
+                android:id="@+id/edt_signup_username"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/margin_16"
                 android:background="@drawable/edittext_border"
-                android:inputType="text"
-                android:hint="@string/login_username"
+                android:inputType="textEmailAddress"
+                android:hint="@string/Email_address"
                 android:padding="@dimen/margin_14"
                 android:textSize="@dimen/size_txt_14" />
 
@@ -58,12 +58,12 @@
                 app:passwordToggleDrawable="@drawable/pass_icon_selector">
 
                 <android.support.v7.widget.AppCompatEditText
-                    android:id="@+id/edt_login_password"
+                    android:id="@+id/edt_signup_password"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@drawable/edittext_border"
-                    android:hint="@string/Password"
                     android:inputType="textPassword"
+                    android:hint="@string/Password"
                     android:padding="@dimen/margin_14"
                     android:textSize="@dimen/size_txt_14" />
 
@@ -71,44 +71,19 @@
 
 
             <android.support.v7.widget.AppCompatButton
-                android:id="@+id/btn_login"
+                android:id="@+id/btn_signup"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/margin_16"
                 android:background="@drawable/button_border"
-                android:hint="@string/Log_in"
+                android:hint="@string/Sign_up"
                 android:padding="@dimen/margin_14"
                 android:textAlignment="center"
                 android:textColor="@color/white"
                 android:textSize="@dimen/size_txt_16"
                 android:textStyle="bold" />
 
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/margin_10"
-                android:gravity="center">
 
-                <android.support.v7.widget.AppCompatTextView
-                    android:id="@+id/txt_forget"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginRight="@dimen/margin_4"
-                    android:text="@string/Forgetten"
-                    android:textSize="@dimen/size_txt_12" />
-
-
-
-                <android.support.v7.widget.AppCompatTextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_toRightOf="@id/txt_forget"
-                    android:text="@string/Get_help"
-                    android:textColor="@color/black"
-                    android:textSize="@dimen/size_txt_12" />
-
-
-            </RelativeLayout>
         </LinearLayout>
 
 
@@ -124,14 +99,14 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginRight="@dimen/margin_4"
-                android:text="@string/Dont_have_account" />
+                android:text="@string/have_account" />
 
             <android.support.v7.widget.AppCompatTextView
-                android:id="@+id/tvSignUp"
+                android:id="@+id/tvLogIn"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_toRightOf="@id/txt_account"
-                android:text="@string/Sign_up"
+                android:text="@string/Log_in"
                 android:textColor="@color/black" />
 
         </RelativeLayout>

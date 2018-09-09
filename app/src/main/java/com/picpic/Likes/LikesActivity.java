@@ -28,16 +28,16 @@ public class LikesActivity extends AppCompatActivity {
 
 
 
-        /*
-         * setup BottomNavigationView
-         * */
+
         setupBottomNavigation(mBottomNavigationView);
 
 
 
 
     }
-
+    /*
+     * setup BottomNavigationView
+     * */
     private void setupBottomNavigation(BottomNavigationView mBottomNavigationView) {
 
         BottomNavigationViewHelper.enableNavigation(mContext,mBottomNavigationView);

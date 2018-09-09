@@ -10,17 +10,21 @@ import android.widget.GridView;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
+import com.picpic.BaseFragment;
 import com.picpic.Utils.CustomGridAdapter;
 import com.picpic.R;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import butterknife.OnItemClick;
 
-public class GridShowFragment extends Fragment {
+public class GridShowFragment extends BaseFragment {
+
     private static final int NUM_GRID_COLUMN=3;
-    private GridView grid;
 
 
+    @BindView(R.id.gridview)
+    GridView grid;
 
     int[] imageId={
             R.drawable.squareflower, R.drawable.squareflower,
@@ -29,21 +33,21 @@ public class GridShowFragment extends Fragment {
 
 
     @Override
-    public View onCreateView( LayoutInflater inflater,  ViewGroup container,  Bundle savedInstanceState) {
+    protected int getFragmentLayout() {
+        return R.layout.fragment_grid_imageview;
+    }
 
-        View view=inflater.inflate(R.layout.fragment_grid_imageview,container,false);
+    @Override
+    public void onViewCreated(View view, Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
 
-        ButterKnife.bind(this,view);
-
-
-
-         grid = view.findViewById(R.id.gridview);
         CustomGridAdapter adapter=new CustomGridAdapter(getActivity().getBaseContext(),imageId);
         grid.setAdapter(adapter);
         int gridWidth=getResources().getDisplayMetrics().widthPixels;
         int imageWidth=gridWidth/NUM_GRID_COLUMN;
         grid.setColumnWidth(imageWidth);
 //        grid.setNestedScrollingEnabled(false);
+
 
         grid.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -52,6 +56,10 @@ public class GridShowFragment extends Fragment {
             }
         });
 
-        return view;
+
     }
+
+
+
+
 }

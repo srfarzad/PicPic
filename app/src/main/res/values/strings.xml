@@ -6,12 +6,32 @@
     <string name="PHOTO">PHOTO</string>
     <string name="Camera">Camera</string>
     <string name="Messaging">Messaging</string>
+    <string name="Private_information">Private information</string>
 
+    <string name="Bio">Bio</string>
+    <string name="Website">Website</string>
+    <string name="Change_photo">Change photo</string>
     <string name="Name">Name</string>
     <string name="pic_pic">picpic</string>
     <string name="pic_web">www.picpic.com</string>
     <string name="likes">likes</string>
     <string name="post_desc">the first post</string>
+    <string name="Username">Username</string>
+    <string name="Gender">Gender</string>
+    <string name="Try_Instagram_Tools">Try Instagram Business Tools</string>
+    <string name="Phone_number">Phone number</string>
+    <string name="Email_address">Email address</string>
+    <string name="login_username">Phone number, email address or username </string>
+    <string name="Password">Password</string>
+    <string name="Forgetten">Forgetten your login details?</string>
+    <string name="Get_help">Get help with signing in</string>
+    <string name="Log_in">Log In</string>
+    <string name="Dont_have_account">Dont have an account?</string>
+    <string name="have_account">Already have an account?</string>
+    <string name="Sign_up">Sign up</string>
+    <string name="Posts">Posts</string>
+    <string name="Followers">Followers</string>
+    <string name="Following">Following</string>
 
     <string name="male">مرد</string>
     <string name="female">زن</string>
