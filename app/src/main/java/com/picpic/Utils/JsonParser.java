@@ -17,6 +17,7 @@ public class JsonParser {
             JSONObject jsonObject = jsonArray.getJSONObject(i);
             Images images = new Images();
             images.setImage(jsonObject.getString("img"));
+           // images.save();
             imagesList.add(images);
         }
         return imagesList;

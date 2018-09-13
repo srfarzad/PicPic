@@ -2,8 +2,10 @@ package com.picpic.models;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
+import com.orm.SugarRecord;
 
 public class Posts {
+
 
     @SerializedName("id")
     @Expose

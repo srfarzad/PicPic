@@ -19,7 +19,7 @@ public class WebserviceCaller {
         apiInterface = ApiClient.getClient().create(ApiInterface.class);
     }
 
-    public void getAllPosts(final IMessageListener iMessageListener) {
+    public void getAllPosts( final IMessageListener iMessageListener) {
 
         Call<List<Posts>> posts = apiInterface.getAllPosts();
 

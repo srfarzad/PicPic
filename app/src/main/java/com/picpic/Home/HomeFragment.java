@@ -83,9 +83,7 @@ public class HomeFragment extends BaseFragment {
             @Override
             public void onResponse(List posts) {
                 Log.e("","");
-
                 setupRecyclerView(mRecyclerView,posts);
-
             }
 
             @Override

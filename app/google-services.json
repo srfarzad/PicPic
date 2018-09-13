@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "316940956738",
+    "firebase_url": "https://picpic-cc8da.firebaseio.com",
+    "project_id": "picpic-cc8da",
+    "storage_bucket": "picpic-cc8da.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:316940956738:android:b1d40c9c04b435fc",
+        "android_client_info": {
+          "package_name": "com.picpic"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "316940956738-gama7thsjqkuescof191qe3m0rthlg20.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.picpic",
+            "certificate_hash": "d5d294aaf83e2a7dc1d21bc198dc2bba802fdd34"
+          }
+        },
+        {
+          "client_id": "316940956738-321v7prme09gl86r5el5galiivdiqucp.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCLWaC-G2hv02rbgFy4-XtENVJ54A_Z2II"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "316940956738-321v7prme09gl86r5el5galiivdiqucp.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

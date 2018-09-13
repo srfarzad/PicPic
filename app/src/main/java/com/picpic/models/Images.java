@@ -1,8 +1,13 @@
 package com.picpic.models;
 
-public class Images {
+import com.orm.SugarRecord;
+
+public class Images  {
 
     private String image;
+
+    public Images(){}
+
 
     public String getImage() {
         return image;

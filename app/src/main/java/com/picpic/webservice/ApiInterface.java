@@ -13,8 +13,14 @@ import retrofit2.http.POST;
 
 public interface ApiInterface {
 
+
     @GET("posts.php")
     Call<List<Posts>> getAllPosts();
+
+    @FormUrlEncoded
+    @GET("myPosts.php")
+    Call<List<Posts>> getAllMyPosts(@Field("id") String userId , @Field("from") int from , @Field("to") int to);
+
 
     @POST("register.php")
     @FormUrlEncoded

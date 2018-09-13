@@ -2,7 +2,13 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.picpic">
 
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+
+    <uses-permission android:name="android.permission.READ_SMS"/>
+
+    <uses-permission android:name="android.permission.RECEIVE_SMS"/>
 
     <application
         android:name=".config.AppConfig"
@@ -29,6 +35,48 @@
         <activity android:name=".Likes.LikesActivity"></activity>
         <activity android:name=".Share.ShareActivity"></activity>
 
+        <meta-data
+            android:name="DATABASE"
+            android:value="picpic.db" />
+        <meta-data
+            android:name="VERSION"
+            android:value="1" />
+        <meta-data
+            android:name="QUERY_LOG"
+            android:value="true" />
+        <meta-data
+            android:name="DOMAIN_PACKAGE_NAME"
+            android:value="com.picpic" />
+
+        <receiver android:name=".service.BootReciver">
+
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>
+
+        </receiver>
+
+        <receiver android:name=".service.SMSReciver" android:enabled="true" android:exported="true" >
+
+            <intent-filter android:priority="999">
+
+                <action android:name="android.provider.Telephony.SMS_RECEIVED"/>
+
+            </intent-filter>
+
+        </receiver>
+
+        <service android:name=".service.UpdateService"/>
+
+        <service android:name=".service.PicPicService">
+
+            <intent-filter>
+
+                <action android:name="com.picpic.PicPicInterface"></action>
+
+            </intent-filter>
+
+        </service>
 
     </application>
 

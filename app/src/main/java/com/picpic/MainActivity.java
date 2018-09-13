@@ -1,9 +1,12 @@
 package com.picpic;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.picpic.service.UpdateService;
 
 import butterknife.BindString;
 import butterknife.BindView;
@@ -25,6 +28,7 @@ public class MainActivity extends BaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
 
 
 
