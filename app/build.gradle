@@ -10,6 +10,14 @@ android {
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         vectorDrawables.useSupportLibrary = true
+
+
+        manifestPlaceholders = [
+                onesignal_app_id: '241ec74d-82d5-4ea8-8a4e-1e986e78b434',
+                // Project number pulled from dashboard, local value is ignored.
+                onesignal_google_project_number: 'REMOTE'
+        ]
+
     }
     buildTypes {
         release {
@@ -46,6 +54,8 @@ dependencies {
     implementation 'com.github.satyan:sugar:1.5'
     implementation 'com.google.firebase:firebase-core:16.0.1'
     implementation 'com.google.firebase:firebase-auth:16.0.3'
+    implementation 'com.onesignal:OneSignal:[3.9.1, 3.99.99]'
+
 
 }
 apply plugin: 'com.google.gms.google-services'
