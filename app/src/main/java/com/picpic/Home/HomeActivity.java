@@ -8,6 +8,7 @@ import android.support.annotation.Nullable;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -16,6 +17,10 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.picpic.BaseActivity;
 import com.picpic.R;
 import com.picpic.Utils.SectionPagerAdapter;
+import com.picpic.dagger.DaggerUserComponnet;
+import com.picpic.dagger.User;
+import com.picpic.dagger.UserComponnet;
+import com.picpic.dagger.UserModule;
 import com.picpic.service.UpdateService;
 
 import java.util.concurrent.Executor;
@@ -51,6 +56,16 @@ public class HomeActivity extends BaseActivity {
        // register();
 
         login();
+
+
+        UserComponnet componnet= DaggerUserComponnet.builder().userModule(new UserModule()).build();
+
+      //  componnet.provideUser().setUserContact("Test");
+
+
+        User user = componnet.provideUser();
+
+        Toast.makeText(getApplicationContext(),user.getUserContact(),Toast.LENGTH_LONG).show();
 
     }
 

@@ -32,6 +32,7 @@ public class MainActivity extends BaseActivity {
 
 
 
+
     }
 
   /*  @OnClick(R.id.txt_main)

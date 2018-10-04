@@ -106,8 +106,8 @@ public class HomeFragment extends BaseFragment {
         mRecyclerView.setHasFixedSize(false);
         mRecyclerView.setNestedScrollingEnabled(false);
 
-        PostAdapter adapter=new PostAdapter(getActivity(),posts);
-        mRecyclerView.setAdapter(adapter);
+        //PostAdapter adapter=new PostAdapter(getActivity(),posts);
+        //mRecyclerView.setAdapter(adapter);
 
     }
 
